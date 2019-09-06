@@ -3,6 +3,10 @@ class Pymatrix:
         self.matrix = matrix
 
     def mprint(self):
+        """
+        prints matrix in matrix form
+        :return: nothing
+        """
         for i in range(len(self.matrix)):
             for j in self.matrix[i]:
                 print(j, end=" ")
@@ -10,6 +14,11 @@ class Pymatrix:
         pass
 
     def mmultiply(self, matrix):
+        """
+        multiplies object matrix on another matrix
+        :param second matrix:
+        :return:
+        """
         try:
             result_matrix = [[0 for row in range(len(self.matrix))] for col in range(len(matrix[0]))]
             for i in range(len(self.matrix)):
@@ -22,6 +31,11 @@ class Pymatrix:
         pass
 
     def maddition(self, matrix):
+        """
+        adds to object matrix another matrix
+        :param matrix:
+        :return:
+        """
         try:
             result_matrix = [[0 for col in range(len(matrix[0]))] for row in range(len(matrix))]
             for i in range(len(matrix)):
@@ -33,6 +47,10 @@ class Pymatrix:
         pass
 
     def mtranpose(self):
+        """
+        transposes object matrix
+        :return:
+        """
         result_matrix = [[0 for col in range(len(self.matrix))] for row in range(len(self.matrix[0]))]
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[0])):
@@ -41,6 +59,10 @@ class Pymatrix:
         pass
 
     def mrotate(self):
+        """
+        rotates matrix at 90 degrees left
+        :return:
+        """
         result_matrix = [[0 for col in range(len(self.matrix[0]))] for row in range(len(self.matrix))]
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[0])):
@@ -48,6 +70,18 @@ class Pymatrix:
                 # left turn -> result_matrix[i][j] = self.matrix[len(self.matrix) - 1 - i][j]
         self.matrix = result_matrix
         pass
+
+    def square_check(self):
+        """
+        checks if a matrix is a square matrix
+        :return:
+        """
+        return len(self.matrix) == len(self.matrix[0])
+
+    def mdet(self):
+        pass
+
+
 
 
 def main():
