@@ -7,6 +7,11 @@ class Sole(Pymatrix):
         self.column_vector = column_vector
 
     def gaussian_elimination(self, matrix):
+        """
+
+        :param matrix:
+        :return:
+        """
         # eliminate columns
         for col in range(len(matrix[0])):
             for row in range(col + 1, len(matrix)):
@@ -30,7 +35,15 @@ class Sole(Pymatrix):
         return result
 
     def gauss_jordan_elimination(self):
+        """
+
+        :return:
+        """
         pass
 
     def cramers_rule(self):
+        """
+        
+        :return:
+        """
         pass
