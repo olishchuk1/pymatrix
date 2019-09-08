@@ -17,9 +17,8 @@ class Sole(Pymatrix):
             for row in range(col + 1, len(matrix)):
                 r = [(row_value * (-(matrix[row][col] / matrix[col][col]))) for row_value in matrix[col]]
                 matrix[row] = [sum(pair) for pair in zip(matrix[row], r)]
-        # now backsolve by substitution
         result = []
-        matrix.reverse()  # makes it easier to backsolve
+        matrix.reverse()  
         for row in range(len(matrix)):
             if row == 0:
                 result.append(matrix[row][-1] / matrix[row][-2])
@@ -43,7 +42,7 @@ class Sole(Pymatrix):
 
     def cramers_rule(self):
         """
-        
+
         :return:
         """
         pass
