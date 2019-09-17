@@ -1,3 +1,6 @@
+from operator import itemgetter
+from pprint import pprint
+
 class Pymatrix:
     def __init__(self, matrix):
         self.matrix = matrix
@@ -78,20 +81,22 @@ class Pymatrix:
         """
         return len(self.matrix) == len(self.matrix[0])
 
-    def mdet(self):
+    def mdeterminant(self):
+        for y in range(len(self.matrix)):
+
+            ##Need to be sorted by y - element from y - row till the last row
+
+            for i in range(len(self.matrix) - 1 - y):
+                mult = self.matrix[y + i + 1][y] / self.matrix[y][y]
+                for j in range(y, len(self.matrix[i+1])):
+                    self.matrix[y + i + 1][j] -= mult * self.matrix[y][j]
+
+        ##
+        pprint(self.matrix)
+
+        res = 1
+        for i in range(len(self.matrix)):
+            res *= self.matrix[i][i]
+
+        print(res)
         pass
-
-
-
-
-def main():
-    mat = Pymatrix([[1, 2, 3], [6, 5, 4]])
-    mat.maddition([[1, 3, 5], [4, 2, 3]])
-    mat.mprint()
-    mat.mtranpose()
-    mat.mrotate()
-    mat.mprint()
-
-
-if __name__ == '__main__':
-    main()

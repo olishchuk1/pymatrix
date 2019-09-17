@@ -18,4 +18,9 @@ class PymatrixTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    mat = Pymatrix([[3, 2, 1], [7, -3, 2], [3, 4, 0]])
+    mat.mdeterminant()
+
+    # mat = Pymatrix([[2, 2, -1, 1], [4, 3, -1, 2], [8, 5, -3, 4],[3, 3, -2, 2]])
+    # print(mat.mmultiply([[1], [1], [-1], [-1]]))
+    # mat.mprint()

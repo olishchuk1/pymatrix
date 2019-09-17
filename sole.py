@@ -18,7 +18,7 @@ class Sole(Pymatrix):
                 r = [(row_value * (-(matrix[row][col] / matrix[col][col]))) for row_value in matrix[col]]
                 matrix[row] = [sum(pair) for pair in zip(matrix[row], r)]
         result = []
-        matrix.reverse()  
+        matrix.reverse()
         for row in range(len(matrix)):
             if row == 0:
                 result.append(matrix[row][-1] / matrix[row][-2])
