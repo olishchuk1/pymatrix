@@ -23,5 +23,5 @@ from sole import Sole
 
 
 if __name__ == '__main__':
-    mat = Sole([[1, 2, 3], [5, 2, 4], [2, 4, 5]], [[4], [2], [3]])
-    pprint(mat.gaussian_elimination())
+    mat = Sole([[1, 2, 3, 4], [5, 2, 4, 5], [2, 4, 5, 6], [6, 4, 2, 3]], [[4], [2], [3], [2]])
+    mat.gauss_inverted_matrix()
