@@ -74,6 +74,22 @@ class Pymatrix:
         self.matrix = result_matrix
         pass
 
+    def matrix_sort(self, i):
+        for k in range(len(self.matrix)-2, i, -1):
+            for j in range(i, k+1):
+                if self.matrix[j][i] < self.matrix[j+1][i]:
+                    self.matrix[j], self.matrix[j+1] = self.matrix[j+1], self.matrix[j]
+        pass
+
+    def triangle_matrix(self):
+        for y in range(len(self.matrix)):
+            self.matrix_sort(y)
+            for i in range(len(self.matrix) - 1 - y):
+                mult = self.matrix[y + i + 1][y] / self.matrix[y][y]
+                for j in range(y, len(self.matrix[i+1])):
+                    self.matrix[y + i + 1][j] -= mult * self.matrix[y][j]
+        pass
+
     def square_check(self):
         """
         checks if a matrix is a square matrix
@@ -82,21 +98,10 @@ class Pymatrix:
         return len(self.matrix) == len(self.matrix[0])
 
     def mdeterminant(self):
-        for y in range(len(self.matrix)):
-
-            ##Need to be sorted by y - element from y - row till the last row
-
-            for i in range(len(self.matrix) - 1 - y):
-                mult = self.matrix[y + i + 1][y] / self.matrix[y][y]
-                for j in range(y, len(self.matrix[i+1])):
-                    self.matrix[y + i + 1][j] -= mult * self.matrix[y][j]
-
-        ##
+        self.triangle_matrix()
         pprint(self.matrix)
-
         res = 1
         for i in range(len(self.matrix)):
             res *= self.matrix[i][i]
-
         print(res)
         pass
