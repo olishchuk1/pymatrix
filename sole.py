@@ -53,14 +53,7 @@ class Sole(Pymatrix):
 
         #TODO: convert -0.0 to 0.0
 
-        matrix.reverse()
-        ones_matrix.reverse()
-        for i in range(len(matrix)):
-            temp = matrix[i][len(matrix)-i-1]
-
-
-
-        pass
+        return ones_matrix
 
     def gauss_jordan_elimination(self):
         """
