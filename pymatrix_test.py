@@ -19,9 +19,22 @@ from sole import Sole
 #         mat = Pymatrix([[1, 2], [3, 4], [5, 6]])
 #         self.assertEqual(mat.mmultiply([[2, 6, 5], [1, 8, 3]]), [[4, 22, 11], [10, 50, 27], [16, 78, 43]])
 
+# def count_symbols(word):
+#     try:
+#         word_set = set([i for i in word])
+#         letters = {}
+#         for i in word_set:
+#             letters[i] = 0
+#         for i in word:
+#             letters[i] += 1
+#
+#         return letters
+#     except KeyError:
+#         return "Error"
+
 
 
 
 if __name__ == '__main__':
-    mat = Sole([[1, 2, 3, 4], [5, 2, 4, 5], [2, 4, 5, 6], [6, 4, 2, 3]], [[4], [2], [3], [2]])
-    pprint(mat.gauss_inverted_matrix())
+    mat = Sole([[2, 3, 4], [4, 5, 2], [3, 2, 8]], [1, 2, 3])
+    mat.gauss_inverted_matrix()
