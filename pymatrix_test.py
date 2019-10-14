@@ -36,5 +36,5 @@ from sole import Sole
 
 
 if __name__ == '__main__':
-    mat = Sole([[2, 3, 4], [4, 5, 2], [3, 2, 8]], [1, 2, 3])
+    mat = Sole([[4, -2, 1], [1, 6, -2], [1, 0, 0]], [1, 2, 3])
     mat.gauss_inverted_matrix()

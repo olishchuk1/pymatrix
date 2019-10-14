@@ -30,6 +30,7 @@ class Sole(Pymatrix):
                 # solve with (c - b) / a
                 result.append((matrix[sol][-1] - inner) / matrix[sol][-sol - 2])
         result.reverse()
+
         return result
 
     def gauss_inverted_matrix(self):
@@ -56,21 +57,12 @@ class Sole(Pymatrix):
         matrix.reverse()
         ones_matrix.reverse()
 
-        result = []
-        matrix.reverse()
-        for sol in range(len(matrix)):
-            if sol == 0:
-                result.append(matrix[sol][-1] / matrix[sol][-2])
-            else:
-                inner = 0
-                # substitute in all known coefficients
-                for x in range(sol):
-                    inner += (result[x] * matrix[sol][-2 - x])
-                # the equation is now reduced to ax + b = c form
-                # solve with (c - b) / a
-                result.append((matrix[sol][-1] - inner) / matrix[sol][-sol - 2])
-        result.reverse()
-
+        for i in range(len(matrix)-1):
+            for j in range(1, len(matrix[i])):
+                c = matrix[i + j][- 1 - i]
+                for y in range(len(ones_matrix)):
+                    ones_matrix[j][y] -= ones_matrix[j - 1][y] * c
+            
 
         return ones_matrix
 
