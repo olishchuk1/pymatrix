@@ -5,6 +5,9 @@ Learning library for working with matrices and systems of linear equations (SOLE
 
 ## List of Contents
 **Using Pymatrix labrary you can:**
+- multiply matrices;
+- add matrices;
+- multiply matrix by a number;
 - find the determinant of a matrix (NxN);
 - find the inverted matrix of a matrix (NxN);
 - find the determinant of a matrix (NxN) using a Gaussian method;
