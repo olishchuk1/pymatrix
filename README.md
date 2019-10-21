@@ -1,9 +1,10 @@
 # Pymatrix
-General description:
 
+## General description:
 Learning library for working with matrices and systems of linear equations (SOLE) implemented on Python programing language.
 
-Using Pymatrix labrary you can:
+## List of Contents
+**Using Pymatrix labrary you can:**
 - find the determinant of a matrix (NxN);
 - find the inverted matrix of a matrix (NxN);
 - find the determinant of a matrix (NxN) using a Gaussian method;
