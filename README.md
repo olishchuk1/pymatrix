@@ -32,4 +32,10 @@ det_obj = obj.mdeterminant()
 ## Methods
 Method | Description
 ------------ | -------------
-obj.madition(other_obj) | Adds the appropriate matrix elements (matrices must be the same size!)
+obj.mmultiply(other_obj) | Multiplies object matrix on another matrix
+obj.madd(other_obj) | Adds the appropriate matrix elements (matrices must be the same size!)
+obj.mtranpose() | Tranposes object matrix
+obj.triangle_matrix() | Reduces object matrix to a triangular matrix
+obj.square_check() | Checks if matrix is a square matrix
+obj.mdeterminant() | Finds the determinant of the object matrix
+obj.matrix_sort() | Sorts in descending order by rows
