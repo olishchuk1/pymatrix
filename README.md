@@ -22,14 +22,22 @@ Learning library for working with matrices and systems of linear equations (SOLE
 ## How to use
 
 ```python
-import Pymatrix as px
+from pymatrix import Pymatrix as px
 
-obj = px([[1, 2], [2, 1])
+obj = px([[1, 2], [2, 1]])
 # finding the determinant of the obj
 det_obj = obj.mdeterminant()
 ```
+```python
+from pymatrix import Sole
+
+obj = Sole([[1, 2], [2, 1]], [[1], [2]]) #<matrix>, <result vector>
+# finding the SOLE solution by Gaussian elimination
+solution_obj = obj.gaussian_elimination()
+```
 
 ## Methods
+### Pymatrix methods
 Method | Description
 ------------ | -------------
 obj.mmultiply(other_obj) | Multiplies object matrix on another matrix
@@ -39,3 +47,8 @@ obj.triangle_matrix() | Reduces object matrix to a triangular matrix
 obj.square_check() | Checks if matrix is a square matrix
 obj.mdeterminant() | Finds the determinant of the object matrix
 obj.matrix_sort() | Sorts in descending order by rows
+
+### Sole methods
+
+Method | Description
+------------ | -------------
