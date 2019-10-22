@@ -16,3 +16,20 @@ Learning library for working with matrices and systems of linear equations (SOLE
 - find the SOLE solution by the LU-decomposition (L with ones on the main diagonal);
 - find the SOLE solution by the LU-decomposition (U with ones on the main diagonal);
 - arrangement of symmetric matrices ((U^T)U-decomposition)
+
+## How to download
+
+## How to use
+
+```python
+import Pymatrix as px
+
+obj = px([[1, 2], [2, 1])
+# finding the determinant of the obj
+det_obj = obj.mdeterminant()
+```
+
+## Methods
+Method | Description
+------------ | -------------
+obj.madition(other_obj) | Adds the appropriate matrix elements (matrices must be the same size!)
