@@ -33,8 +33,6 @@ from sole import Sole
 #         return "Error"
 
 
-
-
 if __name__ == '__main__':
-    mat = Sole([[4, -2, 1], [1, 6, -2], [1, 0, 0]], [1, 2, 3])
+    mat = Sole([[1, 2, 3], [0, 1, 4], [5, 6, 0]], [1, 1, 3])
     mat.gauss_inverted_matrix()

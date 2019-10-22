@@ -1,6 +1,7 @@
 from operator import itemgetter
 from pprint import pprint
 
+
 class Pymatrix:
     def __init__(self, matrix):
         self.matrix = matrix
@@ -33,7 +34,7 @@ class Pymatrix:
             pass
         pass
 
-    def maddition(self, matrix):
+    def madd(self, matrix):
         """
         adds to object matrix another matrix
         :param matrix:

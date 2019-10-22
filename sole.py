@@ -1,5 +1,6 @@
 from pymatrix import Pymatrix
 
+
 class Sole(Pymatrix):
     def __init__(self, matrix, column_vector):
         super().__init__(matrix)
@@ -52,17 +53,20 @@ class Sole(Pymatrix):
             matrix[i] = list(map(lambda x: x / temp, matrix[i]))
             ones_matrix[i] = list(map(lambda x: x / temp, ones_matrix[i]))
 
-        #TODO: convert -0.0 to 0.0
+        #TODO: fix that!!!
 
         matrix.reverse()
         ones_matrix.reverse()
 
-        for i in range(len(matrix)-1):
-            for j in range(1, len(matrix[i])):
-                c = matrix[i + j][- 1 - i]
-                for y in range(len(ones_matrix)):
-                    ones_matrix[j][y] -= ones_matrix[j - 1][y] * c
-            
+        for i in range(len(matrix) - 1):
+            for y in range(len(matrix)-1 - i):
+                coef = matrix[y + 1 + i][len(matrix) - 1 - i]
+                for j in range(len(matrix[i])):
+                    matrix[y + 1 + i][j] -= (matrix[i][j] * coef)
+                    ones_matrix[y + 1 + i][j] -= (ones_matrix[i][j] * coef)
+
+        matrix.reverse()
+        ones_matrix.reverse()
 
         return ones_matrix
 
